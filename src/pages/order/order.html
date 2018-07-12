@@ -1,0 +1,74 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title style="text-align: center">Please place your order</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <h1 ></h1>
+    <ion-grid>
+      <ion-row>
+        <ion-col col-6>
+            <ion-item>
+              <ion-label>Whipped Cream</ion-label>
+              <ion-checkbox color="dark" [(ngModel)]="cappuccino"></ion-checkbox>
+            </ion-item>
+            <ion-item>
+              <ion-label>Nutella</ion-label>
+              <ion-checkbox color="dark" [(ngModel)]="espresso"></ion-checkbox>
+            </ion-item>
+            <ion-item>
+              <ion-label>Mint</ion-label>
+              <ion-checkbox color="dark" [(ngModel)]="macchiato"></ion-checkbox>
+            </ion-item>
+          </ion-col>
+            <ion-col>
+                <ion-list radio-group>
+              <ion-item>
+              <ion-label>Tea</ion-label>
+              <ion-radio value=tea ></ion-radio>
+            </ion-item>
+
+            <ion-item>
+                <ion-label>Coffee</ion-label>
+                <ion-radio value=coffee></ion-radio>
+            </ion-item>
+
+           </ion-list>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  <h2 text-center>{{order}}</h2>
+  <ion-grid>
+    <ion-row>
+      <ion-col col-6>
+             <ion-list no padding>
+               
+                 <button ion-button full round color="light" (click)="ord(-1)">-</button>
+               
+              </ion-list>
+      </ion-col>
+     
+      <ion-col>
+         
+             <ion-list no padding>
+               
+                 <button ion-button full round color="light" (click)="ord(1)">+</button>
+               
+              </ion-list>  
+      </ion-col>
+    </ion-row>
+   </ion-grid>
+
+   <button ion-button full outline color="light" (click)="purchase()" >Order</button>
+   <ion-item>
+    <ion-col col-2><h3>PURCHASE DETAILS</h3></ion-col>
+    <ion-col col-2><p>customer:{{name}}</p></ion-col> 
+    <ion-col col-2><p>Coffee cup(s):{{order}}</p></ion-col>
+    <ion-col col-2><p>Net price:R{{netPrice}}</p></ion-col>
+  </ion-item>
+  
+</ion-content>
